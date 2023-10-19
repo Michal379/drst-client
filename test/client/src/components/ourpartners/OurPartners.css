@@ -1,0 +1,46 @@
+.our-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin-top: 30px;
+  }
+  
+.our-container h2 {
+    text-align: center;
+    position: relative;
+    margin-bottom: 20px;
+  }
+  
+  .our-container h2::after {
+    content: "";
+    display: block;
+    width: 100px;
+    height: 4px;
+    background-color: yellow;
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  
+  .container p {
+    margin: 0;
+  }
+
+  .image-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 50px;
+  }
+  
+  .image-container img {
+    max-width: 120px; 
+    height: auto;
+    margin: 10px 20px; 
+    border: 1px solid #ccc;
+    padding: 10px;
+  }
+  
