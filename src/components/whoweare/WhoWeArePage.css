@@ -1,12 +1,28 @@
 .we-container {
-    color: white;
-    padding: 20px;
-    max-width: 800px; 
-    margin: 0 auto;
-    overflow-y: scroll; 
-    height: 100vh; 
-  }
+  color: white;
+  padding: 20px;
+  max-width: 800px; /* Limit width to 800px */
+  margin: 0 auto; /* Center align horizontally */
+  overflow-y: auto; /* Add vertical scrollbar if content exceeds viewport */
+  height: 100vh; /* Full height of viewport */
+}
 
-.heding{
-    color: yellow;
+.heading {
+  color: yellow; /* Color for headings */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .we-container {
+    padding: 15px; /* Reduce padding on smaller screens */
+    font-size: 14px; /* Decrease font size for better readability */
+    max-width: 90%; /* Adjust width for smaller screens */
   }
+}
+
+@media (max-width: 480px) {
+  .we-container {
+    padding: 10px; /* Further reduce padding on very small screens */
+    font-size: 12px; /* Decrease font size for smaller screens */
+  }
+}

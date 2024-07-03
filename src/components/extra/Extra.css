@@ -1,32 +1,60 @@
 .extra-container {
-    display: flex;
-    align-items: flex-start;
-    background-color: rgb(214, 178, 31);
-    padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: rgb(214, 178, 31);
+  padding: 20px;
+  text-align: center; /* Center align text on smaller screens */
+}
+
+.text-section {
+  flex: 1;
+  color: white;
+  max-width: 600px; /* Limit text width for better readability */
+}
+
+.text-section p:nth-child(1),
+.text-section p:nth-child(2) {
+  margin-top: 15px;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.text-section p:nth-child(3) {
+  font-size: 14px;
+}
+
+.cta-button {
+  background-color: #357243;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  margin-top: 30px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .extra-container {
+    padding: 15px; /* Reduce padding on smaller screens */
   }
-  
+
   .text-section {
-    flex: 1;
-    color: white;
+    max-width: 100%; /* Full width text on smaller screens */
   }
-  
+}
+
+@media (max-width: 480px) {
   .text-section p:nth-child(1),
   .text-section p:nth-child(2) {
-    margin-top: 15px;
-    font-weight: bold;
-    font-size: 18px;
+    font-size: 16px; /* Decrease font size for headings on smaller screens */
   }
-  
+
   .text-section p:nth-child(3) {
-    font-size: 14px;
+    font-size: 12px; /* Decrease font size for paragraph on smaller screens */
   }
-  
+
   .cta-button {
-    background-color: #357243;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    cursor: pointer;
-    margin-top: 30px;
+    margin-top: 20px; /* Adjust margin for button on smaller screens */
   }
-  
+}

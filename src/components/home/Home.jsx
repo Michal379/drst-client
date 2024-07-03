@@ -21,24 +21,17 @@ const Home = () => {
   ];
 
   const captions = [
-    'EMPOWERING PEOPLE WITH SPECIAL NEEDS\
-    nHelping those in need find their way to a brighter future',
-    'INVESTING IN ECONOMIC EMPOWERMENT\
-    nProviding opportunities for sustainable growth and success',
-    'PREVENTING HUMAN TRAFFICKING\
-    nProtecting the vulnerable and ensuring their rights are respected',
-    'IMPROVING HEALTH AND WELL-BEING\
-    nProviding access to quality healthcare for all',
-    'INVESTING IN EDUCATION\
-    nTransforming lives through learning and development.',
-    'CLIMATE JUSTICE AND RESILIENCE\
-    nProvide youth with knowledge and tools to raise awareness and promote progressive social change.'
+    'EMPOWERING PEOPLE WITH SPECIAL NEEDS\nHelping those in need find their way to a brighter future',
+    'INVESTING IN ECONOMIC EMPOWERMENT\nProviding opportunities for sustainable growth and success',
+    'PREVENTING HUMAN TRAFFICKING\nProtecting the vulnerable and ensuring their rights are respected',
+    'IMPROVING HEALTH AND WELL-BEING\nProviding access to quality healthcare for all',
+    'INVESTING IN EDUCATION\nTransforming lives through learning and development.',
+    'CLIMATE JUSTICE AND RESILIENCE\nProvide youth with knowledge and tools to raise awareness and promote progressive social change.'
   ];
 
-   // Separate captions with capital letters and small letters
-   const capitalCaptions = captions.map((caption) => caption.split('\\n')[0]);
-   const smallCaptions = captions.map((caption) => caption.split('\\n')[1]);
- 
+  // Separate captions with capital letters and small letters
+  const capitalCaptions = captions.map((caption) => caption.split('\n')[0]);
+  const smallCaptions = captions.map((caption) => caption.split('\n')[1]);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -48,37 +41,33 @@ const Home = () => {
     return () => clearInterval(interval);
   }, [images.length]);
 
-  
   return (
     <div className="home-container">
-   <div id="carouselExampleCaptions" className="carousel slide carousel-container">
-  <div className="carousel-inner">
-    {images.map((image, index) => (
-      <div key={index} className={`carousel-item ${index === activeIndex ? 'active' : ''}`}>
-        <img
-          src={image}
-          className="d-block w-100"
-          alt={`Slide ${index + 1}`}
-          style={{ maxWidth: '100%', maxHeight: '80vh', objectFit: 'cover' }}
-        />
-        <div className="carousel-caption-top">
-                <h3 className="caption-text">{capitalCaptions[index]}</h3>
-                <p className="caption-text-small">{smallCaptions[index]}</p>
-              </div>
-      </div>
-    ))}
-  </div>
-      {/* ... (carousel controls) ... */}
-    </div>
+      <Carousel activeIndex={activeIndex} onSelect={(index) => setActiveIndex(index)}>
+        {images.map((image, index) => (
+          <Carousel.Item key={index}>
+            <img
+              className="d-block w-100"
+              src={image}
+              alt={`Slide ${index + 1}`}
+              style={{ maxHeight: '80vh', objectFit: 'cover' }}
+            />
+            <Carousel.Caption className="carousel-caption-top">
+              <h3 className="caption-text">{capitalCaptions[index]}</h3>
+              <p className="caption-text-small">{smallCaptions[index]}</p>
+            </Carousel.Caption>
+          </Carousel.Item>
+        ))}
+      </Carousel>
 
-    {/* Text content below carousel */}
-    <WhoWeAre />
-    <WhatWeDo />
-    <Extra />
-    <OurPartners />
-     </div>
-     
-    
+      {/* Text content below carousel */}
+      <div className="section">
+        <WhoWeAre />
+        <WhatWeDo />
+        <Extra />
+        <OurPartners />
+      </div>
+    </div>
   );
 };
 

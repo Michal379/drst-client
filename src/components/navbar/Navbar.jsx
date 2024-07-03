@@ -34,12 +34,12 @@ const Navbar = () => {
         <li className="nav-item">
           <Link to="/what-we-do" className="nav-link" onClick={toggleMobileMenu}>What We Do</Link>
         </li>
-        <li className="nav-item">
+        {/* <li className="nav-item">
           <Link to="/our-projects" className="nav-link" onClick={toggleMobileMenu}>Our Projects</Link>
-        </li>
-        <li className="nav-item">
+        </li> */}
+        {/* <li className="nav-item">
           <Link to="/our-partners" className="nav-link" onClick={toggleMobileMenu}>Our Partners</Link>
-        </li>
+        </li> */}
         <li className="nav-item">
           <Link to="/contact-us" className="nav-link" onClick={toggleMobileMenu}>Contact Us</Link>
         </li>
