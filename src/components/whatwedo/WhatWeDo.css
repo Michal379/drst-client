@@ -1,63 +1,99 @@
+body {
+  margin: 0;
+}
+
 .do-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    margin-top: 30px;
-  }
-  
-  .do-container h2 {
-    margin-bottom: 30px;
-    text-align: center;
-    position: relative;
-  }
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin-top: 30px;
+  padding: 20px; /* Adding padding for small screens */
+}
+
+.do-container h2 {
+  margin-bottom: 30px;
+  text-align: center;
+  position: relative;
+}
 
 .do-container h2::after {
-    content: "";
-    display: block;
-    width: 100px;
-    height: 4px;
-    background-color: yellow;
-    position: absolute;
-    bottom: -10px;
-    left: 50%;
-    transform: translateX(-50%);
-  }
-  
-  .container p {
-    margin: 0;
-  }
-  
+  content: "";
+  display: block;
+  width: 100px;
+  height: 4px;
+  background-color: yellow;
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.do-container p {
+  margin: 0;
+}
+
+.do-sections {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.do-section {
+  width: calc(50% - 20px);
+  padding: 20px;
+  box-sizing: border-box;
+  border: 1px solid #ddd;
+  margin-bottom: 20px;
+}
+
+.do-section h5 {
+  margin: 0;
+  font-size: 18px;
+}
+
+.do-section p {
+  margin-top: 8px;
+}
+
+.do-section button {
+  margin-top: 12px;
+  background-color: rgb(225, 178, 23);
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  color: black;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
   .do-sections {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    max-width: 900px;
-    margin: 0 auto;
-    padding: 20px;
-  }
-  
-  .do-section {
-    width: calc(50% - 20px);
-    padding: 20px;
-    box-sizing: border-box;
-    border: 1px solid #ddd;
-    margin-bottom: 20px;
-  }
-  
-  .do-section h5 {
-    margin: 0;
-    font-size: 18px;
-  }
-  
-  .do-section p {
-    margin-top: 8px;
-  }
-  
-  .do-section button {
-    margin-top: 12px;
+    flex-direction: column;
+    align-items: center;
   }
 
-  
-  
+  .do-section {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .do-container h2::after {
+    width: 50px;
+    height: 2px;
+  }
+
+  .do-section {
+    padding: 10px;
+  }
+
+  .do-section button {
+    width: 100%;
+  }
+}
