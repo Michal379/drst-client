@@ -1,18 +1,25 @@
+body {
+  margin: 0;
+}
+
 .contact-us-container {
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-start;
   padding: 20px;
+  flex-wrap: wrap; /* Allows wrapping on smaller screens */
 }
 
 .contact-details {
   flex: 1;
+  margin-right: 20px; /* Adds space between contact details and form */
+  min-width: 300px; /* Ensures minimum width for smaller screens */
 }
 
 .contact-item .icon {
-    color: rgb(225, 178, 23); /* Icon color */
-    margin-right: 10px;
-  }
+  color: rgb(225, 178, 23); /* Icon color */
+  margin-right: 10px;
+}
 
 .contact-details h3 {
   color: rgb(225, 178, 23);
@@ -21,11 +28,11 @@
 
 .contact-form {
   flex: 1;
-  margin-left: 20px;
+  min-width: 300px; /* Ensures minimum width for smaller screens */
 }
 
 .form-title {
-  color:rgb(225, 178, 23);
+  color: rgb(225, 178, 23);
   text-decoration: underline green;
 }
 
@@ -47,10 +54,36 @@ textarea {
 }
 
 .send-button {
-  background-color:rgb(225, 178, 23);
+  background-color: rgb(225, 178, 23);
   color: black;
   padding: 10px 20px;
   border: none;
   border-radius: 5px;
   cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .contact-us-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .contact-details,
+  .contact-form {
+    margin-right: 0;
+    margin-bottom: 20px;
+    min-width: 100%; /* Full width on small screens */
+  }
+}
+
+@media (max-width: 480px) {
+  .contact-details,
+  .contact-form {
+    padding: 10px;
+  }
+
+  .send-button {
+    width: 100%;
+    padding: 15px;
+  }
 }
