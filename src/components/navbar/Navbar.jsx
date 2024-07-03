@@ -1,61 +1,53 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import logoimage from '../../images/logoimage.png' 
+import logoimage from '../../images/logoimage.png';
+import './Navbar.css'; // Ensure you create this CSS file and include the styles below
 
 const Navbar = () => {
-  const navStyle = {
-    display: 'flex',
-    justifyContent: 'space-around',
-    alignItems: 'center',
-    background: 'rgb(238, 210, 210)',
-    color: '#fff',
-    padding: '1rem 0',
-  };
+  const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
 
-  const linkStyle = {
-    color: 'black',
-    textDecoration: 'none',
-    padding: '0.5rem 1rem',
-    borderRadius: '5px',
-  };
-
-  const donateButtonStyle = {
-    backgroundColor: 'rgb(225, 178, 23)',
-    color: 'black',
-    padding: '0.75rem 1.5rem',
-    borderRadius: '10px',
-    fontSize: '1.2rem',
+  const toggleMobileMenu = () => {
+    setMobileMenuOpen(!isMobileMenuOpen);
   };
 
   return (
-    <nav style={navStyle}>
-       {/* Logo */}
-       <div>
+    <nav className="navbar">
+      <div className="navbar-logo">
         <img src={logoimage} alt="Logo" style={{ width: '200px' }} />
       </div>
-      <ul style={{ listStyleType: 'none', display: 'flex', padding: 0 }}>
+
+      <div className="hamburger" onClick={toggleMobileMenu}>
+        {!isMobileMenuOpen ? (
+          <div>&#9776;</div> // Hamburger icon (three lines)
+        ) : (
+          <div>&#10005;</div> // 'X' icon for close
+        )}
+      </div>
+
+      <ul className={`nav-links ${isMobileMenuOpen ? 'nav-links-mobile' : ''}`}>
         <li className="nav-item">
-          <Link to="/" style={linkStyle}>Home</Link>
+          <Link to="/" className="nav-link" onClick={toggleMobileMenu}>Home</Link>
         </li>
         <li className="nav-item">
-          <Link to="/who-we-are" style={linkStyle}>Who We Are</Link>
+          <Link to="/who-we-are" className="nav-link" onClick={toggleMobileMenu}>Who We Are</Link>
         </li>
         <li className="nav-item">
-          <Link to="/what-we-do" style={linkStyle}>What We Do</Link>
+          <Link to="/what-we-do" className="nav-link" onClick={toggleMobileMenu}>What We Do</Link>
         </li>
         <li className="nav-item">
-          <Link to="/our-projects" style={linkStyle}>Our Projects</Link>
+          <Link to="/our-projects" className="nav-link" onClick={toggleMobileMenu}>Our Projects</Link>
         </li>
         <li className="nav-item">
-          <Link to="/our-partners" style={linkStyle}>Our Partners</Link>
+          <Link to="/our-partners" className="nav-link" onClick={toggleMobileMenu}>Our Partners</Link>
         </li>
         <li className="nav-item">
-          <Link to="/contact-us" style={linkStyle}>Contact Us</Link>
+          <Link to="/contact-us" className="nav-link" onClick={toggleMobileMenu}>Contact Us</Link>
         </li>
       </ul>
-      <Link to="/contact-us" style={donateButtonStyle}>DONATE NOW</Link>
+
+      <Link to="/contact-us" className="donate-button" onClick={toggleMobileMenu}>DONATE NOW</Link>
     </nav>
   );
-}
+};
 
 export default Navbar;
