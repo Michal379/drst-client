@@ -60,6 +60,35 @@ body {
   justify-content: flex-end; /* Right-align content */
 }
 
+/* Media Query for Tablets and Mobile Devices */
+@media (max-width: 768px) {
+  .footer-section {
+    width: 45%; /* Adjust width for smaller screens */
+  }
+}
 
+@media (max-width: 480px) {
+  .footer-section {
+    width: 100%; /* Full width on very small screens */
+  }
 
+  .footer-container {
+    flex-direction: column; /* Stack sections vertically */
+    align-items: flex-start; /* Align items to start */
+  }
 
+  .footer-section {
+    align-items: flex-start; /* Align text to start */
+    text-align: left; /* Left-align text */
+  }
+
+  .footer-section h3 {
+    justify-content: flex-start; /* Left-align h3 */
+  }
+
+  .copyright-content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Align copyright text to start */
+  }
+}

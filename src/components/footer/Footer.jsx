@@ -1,5 +1,5 @@
 import React from 'react';
-import './Footer.css'
+import './Footer.css';
 
 const Footer = () => {
   return (
@@ -26,11 +26,11 @@ const Footer = () => {
         <p>A nonprofit making organization dealing with improvement of socio-economic condition in vulnerable, marginalized and deprived communities in Tanzania.</p>
       </div>
       <div className="footer-section footer-copyright">
-  <div className="copyright-content">
-    <p className="left-copyright">&copy; 2023</p>
-    <p className="right-copyright">&copy; All Rights Reserved</p>
-  </div>
-</div>
+        <div className="copyright-content">
+          <p className="left-copyright">&copy; 2023</p>
+          <p className="right-copyright">&copy; All Rights Reserved</p>
+        </div>
+      </div>
     </div>
   );
 }
