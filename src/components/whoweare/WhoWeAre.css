@@ -1,15 +1,19 @@
+body {
+  margin: 0;
+}
+
 .we-container {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 45vh; 
+  padding: 20px; /* Added padding for small screens */
   background-color: gray;
   color: white;
+  text-align: center;
 }
 
 .we-container h2.title {
-  text-align: center;
   position: relative;
   margin-bottom: 20px;
 }
@@ -25,12 +29,51 @@
   left: 50%;
   transform: translateX(-50%);
 }
+
 .paragraphs {
-  text-align: center;
   margin: 10px 0;
+  max-width: 800px; /* Limit the width for better readability */
 }
 
 .button-container {
-  text-align: center;
   margin-top: 20px;
+}
+
+button {
+  background-color: yellow;
+  color: black;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .we-container {
+    padding: 20px;
+  }
+
+  .paragraphs {
+    padding: 0 10px; /* Add padding for better readability on small screens */
+  }
+
+  button {
+    width: 100%; /* Make button full width on smaller screens */
+  }
+}
+
+@media (max-width: 480px) {
+  .we-container h2.title::after {
+    width: 50px;
+    height: 2px;
+  }
+
+  .paragraphs p {
+    font-size: 14px; /* Adjust font size for better readability */
+  }
+
+  .button-container {
+    margin-top: 10px;
+  }
 }

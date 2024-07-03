@@ -1,46 +1,76 @@
 .our-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    margin-top: 30px;
-  }
-  
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin-top: 30px;
+  padding: 0 20px; /* Added padding for small screens */
+}
+
 .our-container h2 {
-    text-align: center;
-    position: relative;
-    margin-bottom: 20px;
-  }
-  
-  .our-container h2::after {
-    content: "";
-    display: block;
-    width: 100px;
-    height: 4px;
-    background-color: yellow;
-    position: absolute;
-    bottom: -10px;
-    left: 50%;
-    transform: translateX(-50%);
-  }
-  
-  .container p {
-    margin: 0;
+  text-align: center;
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.our-container h2::after {
+  content: "";
+  display: block;
+  width: 100px;
+  height: 4px;
+  background-color: yellow;
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.our-container p {
+  margin: 10px 0; /* Added margin for better spacing */
+}
+
+.image-container {
+  display: flex;
+  flex-wrap: wrap; /* Allow images to wrap to the next line on small screens */
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px; /* Increased margin for better spacing */
+}
+
+.image-container img {
+  max-width: 120px;
+  height: auto;
+  margin: 10px;
+  border: 1px solid #ccc;
+  padding: 10px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .our-container {
+    padding: 0 10px; /* Adjusted padding for smaller screens */
   }
 
   .image-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-top: 50px;
+    margin-top: 20px;
   }
-  
+
   .image-container img {
-    max-width: 120px; 
-    height: auto;
-    margin: 10px 20px; 
-    border: 1px solid #ccc;
-    padding: 10px;
+    max-width: 100px; /* Reduced max-width for smaller screens */
   }
-  
+}
+
+@media (max-width: 480px) {
+  .our-container h2::after {
+    width: 50px; /* Reduced width of underline for smaller screens */
+  }
+
+  .image-container {
+    margin-top: 10px;
+  }
+
+  .image-container img {
+    max-width: 80px; /* Further reduced max-width for very small screens */
+  }
+}
